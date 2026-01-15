@@ -3,16 +3,16 @@ import Sidebar from "@/components/sidebar";
 import { deleteProduct } from "@/lib/actions/products";
 import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-interface Product {
-  id:number;
-  name:string;
-  sku:number;
-  price: number;
-  quantity: number;
-  createdAt: Date;
-  lowStock: number | null;
-  userId: number;
-}
+// interface Product {
+//   id:number;
+//   name:string;
+//   sku:number;
+//   price: number;
+//   quantity: number;
+//   createdAt: Date;
+//   lowStock: number | null;
+//   userId: number;
+// }
 export default async function InventoryPage({
   searchParams,
 }: {
@@ -100,7 +100,7 @@ const page= Math.max(1,Number(params.page ?? 1))
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {items.map((product:Product, key:any) => (
+              {items.map((product, key:any) => (
                 <tr key={key} className="hover:bg-gray-50">
                   <td className="px-6 py-4 text-sm  text-gray-500 ">
                     {product.name}
